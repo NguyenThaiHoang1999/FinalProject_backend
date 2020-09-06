@@ -17,7 +17,7 @@
 
                             <div class="position-center">
                                 @foreach($edit_product as $key => $pro)
-                                <form role="form" action="{{URL::to('/update-product/'.$pro->product_id)}}" method="post" enctype="multipart/form-data">
+                                <form role="form" action="{{'/update-product/'.$pro->product_id}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên sản phẩm</label>
@@ -27,11 +27,8 @@
                                     <label for="exampleInputEmail1">SL sản phẩm</label>
                                     <input type="text" data-validation="number" data-validation-error-msg="Làm ơn điền số lượng" name="product_quantity" class="form-control" id="convert_slug" value="{{$pro->product_quantity}}">
                                 </div>
-                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Slug</label>
-                                    <input type="text" name="product_slug" class="form-control" id="exampleInputEmail1" value="{{$pro->product_slug}}">
-                                </div>
-                                     <div class="form-group">
+                                
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Giá sản phẩm</label>
                                     <input type="text" value="{{$pro->product_price}}" name="product_price" class="form-control" id="exampleInputEmail1" >
                                 </div>
@@ -66,9 +63,9 @@
                                       <select name="product_brand" class="form-control input-sm m-bot15">
                                         @foreach($brand_product as $key => $brand)
                                              @if($cate->category_id==$pro->category_id)
-                                            <option selected value="{{$brand->brand_id}}">{{$brand->brand_name}}</option>
+                                            <option selected value="{{$brand->brand_id}}">{{$brand->brand_product_name}}</option>
                                              @else
-                                            <option value="{{$brand->brand_id}}">{{$brand->brand_name}}</option>
+                                            <option value="{{$brand->brand_id}}">{{$brand->brand_product_name}}</option>
                                              @endif
                                         @endforeach
                                             

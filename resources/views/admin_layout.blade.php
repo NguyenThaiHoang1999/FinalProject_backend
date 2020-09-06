@@ -59,13 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="app/public/backend/img/search.png">
                 <span class="username">
-                	 <?php
-					$name = Session::get('admin_name');
-					if($name){
-						echo $name;
-						
-					}
-					?> 
+                	
 
                 </span>
                 <b class="caret"></b>
@@ -73,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i>Đăng xuất</a></li>
+                <li><a href="{{'/logout'}}"><i class="fa fa-key"></i>Đăng xuất</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->
@@ -90,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="{{URL::to('/dashboard')}}">
+                    <a class="active" href="{{'/dashboard'}}">
                         <i class="fa fa-dashboard"></i>
                         <span>Tổng quan</span>
                     </a>
@@ -102,8 +96,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Slider</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="{{URL::to('/manage-slider')}}">Liệt kê slider</a></li>
-                        <li><a href="{{URL::to('/add-slider')}}">Thêm slider</a></li>
+                        <li><a href="{{'/manage-slider'}}">Liệt kê slider</a></li>
+                        <li><a href="{{'/add-slider'}}">Thêm slider</a></li>
                     </ul>
                 </li>
                    
@@ -114,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Đơn hàng</span>
                     </a>
                     <ul class="sub">
-						<li><a href="{{URL::to('/manage-order')}}">Quản lý đơn hàng</a></li>
+						<li><a href="{{'/manage-order'}}">Quản lý đơn hàng</a></li>
 						
                       
                     </ul>
@@ -125,8 +119,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Mã giảm giá</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="{{URL::to('/insert-coupon')}}">Quản lý mã giảm giá</a></li>
-                        <li><a href="{{URL::to('/list-coupon')}}">Liệt kê mã giảm giá</a></li>
+                        <li><a href="{{'/insert-coupon'}}">Quản lý mã giảm giá</a></li>
+                        <li><a href="{{'/list-coupon'}}">Liệt kê mã giảm giá</a></li>
                     </ul>
                 </li>
                  <li class="sub-menu">
@@ -135,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Vận chuyển</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="{{URL::to('/delivery')}}">Quản lý vận chuyển</a></li>
+                        <li><a href="{{'/delivery'}}">Quản lý vận chuyển</a></li>
                         
                         
                       
@@ -147,8 +141,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Danh mục sản phẩm</span>
                     </a>
                     <ul class="sub">
-						<li><a href="{{URL::to('/add-category-product')}}">Thêm danh mục sản phẩm</a></li>
-						<li><a href="{{URL::to('/all-category-product')}}">Liệt kê danh mục sản phẩm</a></li>
+						<li><a href="{{'/add-category-product'}}">Thêm danh mục sản phẩm</a></li>
+						<li><a href="{{'/all-category-product'}}">Liệt kê danh mục sản phẩm</a></li>
                       
                     </ul>
                 </li>
@@ -158,8 +152,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Thương hiệu sản phẩm</span>
                     </a>
                     <ul class="sub">
-						<li><a href="{{URL::to('/add-brand-product')}}">Thêm hiệu sản phẩm</a></li>
-						<li><a href="{{URL::to('/all-brand-product')}}">Liệt kê thương hiệu sản phẩm</a></li>
+						<li><a href="{{'/add-brand-product'}}">Thêm hiệu sản phẩm</a></li>
+						<li><a href="{{'/all-brand-product'}}">Liệt kê thương hiệu sản phẩm</a></li>
                       
                     </ul>
                 </li>
@@ -169,8 +163,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Sản phẩm</span>
                     </a>
                     <ul class="sub">
-						<li><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
-						<li><a href="{{URL::to('/all-product')}}">Liệt kê sản phẩm</a></li>
+						<li><a href="{{'/add-product'}}">Thêm sản phẩm</a></li>
+						<li><a href="{{'/all-product'}}">Liệt kê sản phẩm</a></li>
                       
                     </ul>
                 </li>
@@ -180,8 +174,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Users</span>
                     </a>
                     <ul class="sub">
-                         <li><a href="{{URL::to('/add-users')}}">Thêm user</a></li>
-                        <li><a href="{{URL::to('/users')}}">Liệt kê user</a></li> 
+                         <li><a href="{{'/add-users'}}">Thêm user</a></li>
+                        <li><a href="{{'/users'}}">Liệt kê user</a></li> 
                        
                     </ul>
                 </li>

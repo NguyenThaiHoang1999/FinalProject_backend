@@ -44,7 +44,7 @@ class CategoryProduct extends Controller
        
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update(['category_status'=>1]);
         Session::put('message','Không kích hoạt danh mục sản phẩm thành công');
-        return Redirect::to('all-category-product');
+        return Redirect('all-category-product');
 
     }
     public function active_category_product($category_product_id){

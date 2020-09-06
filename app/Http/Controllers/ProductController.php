@@ -33,7 +33,6 @@ class ProductController extends Controller
     	$data = array();
     	$data['product_name'] = $request->product_name;
         $data['product_quantity'] = $request->product_quantity;
-       
     	$data['product_price'] = $request->product_price;
     	$data['product_desc'] = $request->product_desc;
         $data['product_content'] = $request->product_content;
@@ -62,14 +61,14 @@ class ProductController extends Controller
        
         DB::table('tbl_product')->where('product_id',$product_id)->update(['product_status'=>1]);
         Session::put('message','Không kích hoạt sản phẩm thành công');
-        return Redirect::to('all-product');
+        return Redirect('all-product');
 
     }
     public function active_product($product_id){
         
         DB::table('tbl_product')->where('product_id',$product_id)->update(['product_status'=>0]);
         Session::put('message','Không kích hoạt sản phẩm thành công');
-        return Redirect::to('all-product');
+        return Redirect('all-product');
     }
     public function edit_product($product_id){
         
@@ -87,7 +86,6 @@ class ProductController extends Controller
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['product_quantity'] = $request->product_quantity;
-        $data['product_slug'] = $request->product_slug;
         $data['product_price'] = $request->product_price;
         $data['product_desc'] = $request->product_desc;
         $data['product_content'] = $request->product_content;
@@ -104,12 +102,12 @@ class ProductController extends Controller
                     $data['product_image'] = $new_image;
                     DB::table('tbl_product')->where('product_id',$product_id)->update($data);
                     Session::put('message','Cập nhật sản phẩm thành công');
-                    return Redirect::to('all-product');
+                    return Redirect('all-product');
         }
             
         DB::table('tbl_product')->where('product_id',$product_id)->update($data);
         Session::put('message','Cập nhật sản phẩm thành công');
-        return Redirect::to('all-product');
+        return Redirect('all-product');
     }
     public function delete_product($product_id){
         

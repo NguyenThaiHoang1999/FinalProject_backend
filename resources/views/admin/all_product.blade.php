@@ -69,22 +69,25 @@
               <?php
                if($pro->product_status==0){
                 ?>
-                <a href="{{/unactive-product/'.$pro->product_id"><span class="fa-thumb-styling fa fa-thumbs-up"></span></a>
+                <a href="{{'/unactive-product/'.$pro->product_id}}"><span class="fa-thumb-styling fa fa-thumbs-up"></span></a>
                 <?php
                  }else{
                 ?>  
-                 <a href="{{/active-product/'.$pro->product_id"><span class="fa-thumb-styling fa fa-thumbs-down"></span></a>
+                 <a href="{{'/active-product/'.$pro->product_id}}"><span class="fa-thumb-styling fa fa-thumbs-down"></span></a>
                 <?php
                }
               ?>
             </span></td>
            
             <td>
-              <a href="{{/edit-product/'.$pro->product_id" class="active styling-edit" ui-toggle-class="">
-                <i class="fa fa-pencil-square-o text-success text-active"></i></a>
-              <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này ko?')" href="{{/delete-product/'.$pro->product_id" class="active styling-edit" ui-toggle-class="">
-                <i class="fa fa-times text-danger text"></i>
-              </a>
+              <a href="{{'/edit-product/'.$pro->product_id}}" class="active styling-edit" ui-toggle-class="">
+                <i class="fa fa-pencil-square-o text-success text-active">Edit</i></a>
+              
+              <form action="{{'/delete-product/'.$pro->product_id}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('DELETE')
+                      <button type="submit" onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này ko?')">delete</button>
+               </form>
             </td>
           </tr>
           @endforeach

@@ -55,7 +55,7 @@ Route::get('add-users','UserController@add_users');
 
 
 
-Route::get('/delete-product/{product_id}','ProductController@delete_product');
+Route::delete('/delete-product/{product_id}','ProductController@delete_product');
 Route::get('/all-product','ProductController@all_product');
 Route::get('/unactive-product/{product_id}','ProductController@unactive_product');
 Route::get('/active-product/{product_id}','ProductController@active_product');
